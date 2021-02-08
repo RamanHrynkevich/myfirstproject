@@ -1,8 +1,25 @@
-<h1>This is home page</h1>
-{{greating}}
+{% load static %}
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Imbue:wght@500&display=swap" rel="stylesheet">
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
-<form>
-  <textarea placeholder="введите текст" name="usertext" rows="10" cols="50"></textarea>
-  <br><br>
-  <input type="submit" value="Reverse!!!">
-</form>
+</head>
+<body>
+	<h1>Hello my friend!</h1>
+	<p>If you want to reverse your text, enter it in the following field.</p>
+
+	<form action="{% url 'reverse' %}">
+		<p><input class='form_border' maxlength="25" size="40" placeholder="Enter Your Name" name ='username'></p>
+		<br><br>
+  		<p><textarea class='form_border' placeholder="Enter hear text for reverse" cols="40" rows="10" name="usertext"></textarea></p>
+  		<br><br>
+  		<div><input class="floating-button" type="submit" value="Reverse!!!"></div>
+	</form>
+</body>
+<footer>
+	
+</footer>
+</html>
